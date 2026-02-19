@@ -13,15 +13,13 @@ class ParentNode(HTMLNode):
             raise ValueError("Parent node must have at least a children")
         
         parsed_html = f"<{self.tag}>"
+        if self.props:
+            parsed_html = f"<{self.tag} {self.props_to_html()}>"
 
-        for children in self.children:
+        for child in self.children:
+                parsed_html += child.to_html()
 
-            if children is isinstance(children, ParentNode):
-                parsed_html += children.to_html()
-
-            if children is isinstance(children, LeafNode):
-                parsed_html += children.to_html()
-        
         parsed_html += f"</{self.tag}>"
-        
+
         return parsed_html
+    
