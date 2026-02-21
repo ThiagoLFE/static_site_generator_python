@@ -1,6 +1,6 @@
 import unittest
 
-from leafnode import LeafNode
+from static_site_generator_python.src.classes.leafnode import LeafNode
 
 class testLeafNode(unittest.TestCase):
 
