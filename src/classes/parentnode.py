@@ -1,5 +1,5 @@
-from static_site_generator_python.src.classes.htmlnode import HTMLNode
-from static_site_generator_python.src.classes.leafnode import LeafNode
+from src.classes.htmlnode import HTMLNode
+from src.classes.leafnode import LeafNode
 
 class ParentNode(HTMLNode):
     def __init__(self, tag, children, props=None):

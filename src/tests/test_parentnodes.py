@@ -1,7 +1,7 @@
 import unittest
 
-from static_site_generator_python.src.classes.leafnode import LeafNode
-from static_site_generator_python.src.classes.parentnode import ParentNode
+from src.classes.leafnode import LeafNode
+from src.classes.parentnode import ParentNode
 
 
 class TestParentNode(unittest.TestCase):

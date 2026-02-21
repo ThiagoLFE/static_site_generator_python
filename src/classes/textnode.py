@@ -1,5 +1,5 @@
 from enum import Enum
-from static_site_generator_python.src.classes.leafnode import LeafNode
+from src.classes.leafnode import LeafNode
 
 class TextType(Enum):
     BOLD = "bold"

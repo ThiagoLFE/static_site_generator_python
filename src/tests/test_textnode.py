@@ -1,5 +1,5 @@
 import unittest
-from static_site_generator_python.src.classes.textnode import TextNode, TextType
+from src.classes.textnode import TextNode, TextType
 
 
 class TestTextNode(unittest.TestCase):

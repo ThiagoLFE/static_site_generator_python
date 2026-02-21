@@ -1,6 +1,6 @@
 import unittest
-from static_site_generator_python.src.classes.inline_markdown import split_nodes_delimiter
-from static_site_generator_python.src.classes.textnode import TextNode, TextType
+from src.classes.inline_markdown import split_nodes_delimiter
+from src.classes.textnode import TextNode, TextType
 
 
 class TestInlineMarkdown(unittest.TestCase):
