@@ -1,5 +1,5 @@
 from enum import Enum
-from src.classes.leafnode import LeafNode
+from .leafnode import LeafNode
 
 class TextType(Enum):
     BOLD = "bold"
