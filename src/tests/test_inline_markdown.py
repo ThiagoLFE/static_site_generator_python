@@ -1,5 +1,5 @@
 import unittest
-from src.classes.inline_markdown import split_nodes_delimiter
+from src.utils.inline_markdown import split_nodes_delimiter
 from src.classes.textnode import TextNode, TextType
 
 

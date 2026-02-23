@@ -1,9 +1,4 @@
-from .textnode import TextNode, TextType, text_node_to_html_node
-dictionary_inline_text_types = {
-    "**": TextType.BOLD,
-    "_": TextType.ITALIC,
-    "`": TextType.CODE
-}
+from src.classes.textnode import TextNode, TextType
 
 def split_nodes_delimiter(old_nodes, delimiter, text_type):
     new_nodes = []
@@ -23,6 +18,6 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
             if j % 2 == 0:
                 new_nodes.append(TextNode(parts[j], TextType.TEXT))
             else:
-                new_nodes.append(TextNode(parts[j], dictionary_inline_text_types[delimiter]))
+                new_nodes.append(TextNode(parts[j], text_type))
             
     return new_nodes
