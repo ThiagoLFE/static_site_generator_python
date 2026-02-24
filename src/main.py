@@ -1,5 +1,5 @@
-from src.classes.textnode import TextNode
 from src.classes.textnode import TextType
+from src.classes.textnode import TextNode
 from src.utils.split_nodes_link import split_nodes_link
 
 def main():
