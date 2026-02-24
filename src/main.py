@@ -1,6 +1,6 @@
 from src.classes.textnode import TextType
 from src.classes.textnode import TextNode
-from src.utils.split_nodes_link import split_nodes_link
+from src.utils.split_nodes import split_nodes_link
 
 def main():
     # dummy_obj = TextNode("This is some anchor text", TextType.LINK, "https://www.boot.dev")

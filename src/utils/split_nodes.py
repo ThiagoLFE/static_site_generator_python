@@ -28,8 +28,8 @@ def split_nodes_link(nodes_list):
 
             if not anterior == "":
                 new_nodes.append(TextNode(anterior, TextType.TEXT))
-                new_nodes.append(TextNode(separador[0], TextType.LINK, separador[1]))
-                texto_restante = posterior
+            new_nodes.append(TextNode(separador[0], TextType.LINK, separador[1]))
+            texto_restante = posterior
             
         if len(texto_restante) > 0:
             new_nodes.append(TextNode(texto_restante, TextType.TEXT)) 
