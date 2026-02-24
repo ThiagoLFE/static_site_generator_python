@@ -1,11 +1,7 @@
-from src.classes.textnode import TextType
-from src.classes.textnode import TextNode
-from src.utils.split_nodes import split_nodes_link
+from src.classes.textnode import TextNode, TextType
 
 def main():
-    # dummy_obj = TextNode("This is some anchor text", TextType.LINK, "https://www.boot.dev")
-    # print(dummy_obj)
-
-    print(split_nodes_link([TextNode("This is text with a link [to boot dev](https://www.boot.dev) and [to youtube](https://www.youtube.com/@bootdotdev) Arroz com franguinho", TextType.TEXT)]))
+    node = TextNode("This is text with a link [to boot dev](https://www.boot.dev) and [to youtube](https://www.youtube.com/@bootdotdev) Arroz com franguinho", TextType.TEXT)
+    print(node)
     
 main()
