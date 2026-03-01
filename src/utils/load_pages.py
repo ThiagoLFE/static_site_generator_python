@@ -1,13 +1,12 @@
 from src.utils.generate_page import generate_page
-from os import listdir, mkdir
+from os import listdir, makedirs
 from os.path import join, isfile
 
-def load_pages(path_data, template_path, path_data_dst):
+def load_pages(path_data, template_path, path_data_dst, basepath):
+    
     # dentro do content path temos que fazer a lógica de adicionar diretórios e arquivos conforme necessidade e usar o generate_page() com o caminho completo de cada novo arquivo
-
     # Listar o que temos em content
     list_content_items =  listdir(path_data)
-
     for item in list_content_items:
 
         # caminho completo do arquivo/diretório
@@ -16,13 +15,15 @@ def load_pages(path_data, template_path, path_data_dst):
 
         # Se for arquivo adiciona a página formatada
         if isfile(full_content_path):
+            if not full_content_path.endswith(".md"):
+                continue
             full_dest_path = full_dest_path.replace(".md", ".html")
-            generate_page(full_content_path, template_path, full_dest_path)
+            generate_page(full_content_path, template_path, full_dest_path, basepath)
         
         #Se for diretório
         else:
             # criar diretório no caminho de destino
-            mkdir(full_dest_path)
+            makedirs(full_dest_path, exist_ok=True)
 
             # chamar gerate_page de recursivamente para verificar items internos
-            load_pages(full_content_path, template_path, full_dest_path)
+            load_pages(full_content_path, template_path, full_dest_path, basepath)

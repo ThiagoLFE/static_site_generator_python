@@ -2,11 +2,11 @@ from os.path import exists, join, isfile
 from os import getcwd, listdir, mkdir
 from shutil import rmtree, copy
 
-def init():
+def init(path_dest):
     # Caminhos
     root_path = getcwd() 
     path_sources = join(root_path, "src")
-    path_public = join(root_path, "public")
+    path_public = join(root_path, path_dest)
     path_static = join(path_sources, "static")
 
     # Se existir o caminho x tem que apagar o diretório inteiro (no mercy)

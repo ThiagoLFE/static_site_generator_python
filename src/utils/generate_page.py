@@ -1,9 +1,11 @@
 from src.utils.markdown_to_html_node import markdown_to_html_node
 from src.utils.extract_title import extract_title
 from os import makedirs
-from os.path import exists, dirname, join, basename
+from os.path import dirname, join, basename
+import sys
+def generate_page(from_path, template_path, dest_path, basepath):
 
-def generate_page(from_path, template_path, dest_path):
+    
     print(f"Generating page from {from_path} to {dest_path} using {template_path}")
 
     # Pegando informações do markdown + template para injetar blocos html.
@@ -22,6 +24,8 @@ def generate_page(from_path, template_path, dest_path):
     # Formatando template com as informações do markdown
     template = template.replace("{{ Title }}", title)
     template = template.replace("{{ Content }}", content_html)
+    template = template.replace('href="/', f'href="{basepath}')
+    template = template.replace('src="/', f'src="{basepath}')
 
     # Pegando informações do caminho de destino da página a ser gerada
     directory_dst_name = dirname(dest_path)
