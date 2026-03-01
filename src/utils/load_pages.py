@@ -18,7 +18,7 @@ def load_pages(path_data, template_path, path_data_dst, basepath):
             if not full_content_path.endswith(".md"):
                 continue
             full_dest_path = full_dest_path.replace(".md", ".html")
-            generate_page(full_content_path, template_path, full_dest_path, basepath)
+            generate_page(full_content_path, template_path, full_dest_path, join(basepath, item))
         
         #Se for diretório
         else:
@@ -26,4 +26,4 @@ def load_pages(path_data, template_path, path_data_dst, basepath):
             makedirs(full_dest_path, exist_ok=True)
 
             # chamar gerate_page de recursivamente para verificar items internos
-            load_pages(full_content_path, template_path, full_dest_path, basepath)
+            load_pages(full_content_path, template_path, full_dest_path, join(basepath, item))
