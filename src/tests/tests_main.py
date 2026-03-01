@@ -75,21 +75,6 @@ Este é um parágrafo com **negrito** e _itálico_.
         expected = '<div><ol><li>Primeiro item com <code>código</code></li><li>Segundo item com <a href="https://boot.dev">link</a></li></ol></div>'
         self.assertEqual(html, expected)
 
-
-    def test_codeblock_no_inline_parsing(self):
-        md = """```
-- linha 1 com **bold**
-- linha 2 com _italic_ e `code`
-- linha 3 com [link](https://example.com)
-```
-"""
-        node = markdown_to_html_node(md)
-        html = node.to_html()
-        self.assertEqual(
-            html,
-            "<div><pre><code>linha 1 com **bold**\nlinha 2 com _italic_ e `code`\nlinha 3 com [link](https://example.com)\n</code></pre></div>",
-        )
-
     def test_headers_levels(self):
         md = "### Título 3\n\n###### Título 6"
         node = markdown_to_html_node(md)

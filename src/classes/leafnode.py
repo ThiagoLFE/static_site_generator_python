@@ -5,7 +5,17 @@ class LeafNode(HTMLNode):
         super().__init__(tag, value, None, props)
     
     def to_html(self):
-        if not self.value:
+
+        if self.value == None:
+            # to debbug error
+            print("=-"* 20)
+            print("DEBUG ERROR LeafNode sem valor:")
+            print("tag:", self.tag)
+            print("props:", self.props)
+            print("value:", self.props)
+            print("children:", self.children)
+            print("=-"* 20)
+            
             raise ValueError("All leaf nodes must have a value.")
         
         if not self.tag:

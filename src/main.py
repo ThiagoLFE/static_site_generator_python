@@ -1,7 +1,15 @@
 from src.classes.textnode import TextNode, TextType
-from src.copy_content import tests
+from src.copy_content import init
+from src.utils.generate_page import generate_page
+from os import getcwd
+from os.path import join
+
 def main():
-    #node = TextNode("This is text with a link [to boot dev](https://www.boot.dev) and [to youtube](https://www.youtube.com/@bootdotdev) Arroz com franguinho", TextType.TEXT)
-    #print(node)
-    tests()
+    root_path = getcwd()
+    markdown_path = join(join(root_path, "content"), "index.md")
+    path_template = join(root_path, "template.html")
+    dst_path = join(join(root_path, "public"), "index.html")
+
+    init()
+    generate_page(markdown_path, path_template, dst_path)
 main()
