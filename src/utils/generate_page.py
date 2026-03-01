@@ -22,7 +22,6 @@ def generate_page(from_path, template_path, dest_path):
     # Formatando template com as informações do markdown
     template = template.replace("{{ Title }}", title)
     template = template.replace("{{ Content }}", content_html)
-    print(content_html)
 
     # Pegando informações do caminho de destino da página a ser gerada
     directory_dst_name = dirname(dest_path)

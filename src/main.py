@@ -1,15 +1,18 @@
-from src.classes.textnode import TextNode, TextType
 from src.copy_content import init
-from src.utils.generate_page import generate_page
+from src.utils.load_pages import load_pages
 from os import getcwd
 from os.path import join
 
 def main():
+
     root_path = getcwd()
-    markdown_path = join(join(root_path, "content"), "index.md")
+    content_path = join(root_path, "content")
     path_template = join(root_path, "template.html")
-    dst_path = join(join(root_path, "public"), "index.html")
+    dst_path = join(root_path, "public")    
+    
+ 
 
     init()
-    generate_page(markdown_path, path_template, dst_path)
+    load_pages(content_path, path_template, dst_path)
+
 main()
